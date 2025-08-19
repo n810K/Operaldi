@@ -31,7 +31,7 @@ změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vi
 */ 
 
 :root {
-    --lessTransparent: transparent 70%; /* 50% */
+    --lessTransparent: transparent 50%; /* 50% */
     --customRadius: 8px; /* NOT USING NOW */
 }
 
@@ -444,4 +444,5 @@ input[type=radio], input[type=checkbox] {
 
 .theme-dark input[type=radio], .theme-dark input[type=checkbox] {
     background-image: none;
+
 }
