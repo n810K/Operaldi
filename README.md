@@ -3,6 +3,8 @@ My own CSS for Vivaldi, inspired by Opera
 
 Screenshots:
 
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/19ff508d-e57a-4524-9923-e56f89109f4f" />
+
 <img width="1080" height="580" alt="image" src="https://github.com/user-attachments/assets/b337f467-ba56-4705-8296-78b6a7f904dd" />
 
 <img width="1080" height="580" alt="image" src="https://github.com/user-attachments/assets/2886a50d-bf9c-4f8d-85c9-c9184b8cd40a" />
