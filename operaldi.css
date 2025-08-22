@@ -4,25 +4,19 @@ zkusit upravit označený taby ctrl (asi nejde?)
 
 zkusit opravit tab tiles divnej padding (asi nejde?)
 
-opravit kalendář a možná bookmarks
-
-
 
 modernizace:
-ctrl+f (ARC, OPERA, ZEN)
+ctrl+f (ARC, ZEN?)
 speed dial (opera? nebo jinde inspirace, nebo stáhnout extension?)
 workspace okénko - vložit bg-picture?
 tab tiles okénko - vložit bg-picture?
+OZNÁMENÍ KALENDÁŘE
 download
+
 kalendář
 bookmarks
 email
 CTRL+E - vložit bg-picture? (Arc, Zen)
-
-
-
-
-ukázat taby (možná i sidepanel) na hover, ale jen když je zapnutý tlačítko na skrytí?
 
 
 
@@ -416,6 +410,42 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
     /* border-radius: var(--customRadius); */
 }
 
+/* BOOKMARKS PANEL */
+
+.panel-bookmarks .panel-bookmarks-edit {
+    padding-right: 12px;
+}
+
+/* DOWNLOAD WINDOW */
+
+.download-editor.download-editor {
+    padding: 0px 12px 0px 0px;
+}
+
+/* CALENDAR PANEL */
+
+.panel {
+    padding-right: 8px;
+}
+
+.panel .calendar-grid-agenda {
+    padding-right: 12px;
+}
+
+#panels-container.right .panel {
+    padding-left: 0px;
+}
+
+.MonthDayPicker {
+    margin-bottom: 0px;
+}
+
+/* MAIL PANEL */
+
+.VivaldiList-Offset {
+    padding-right: 12px;
+}
+
 /* CTRL+F */
 
 .find-in-page-wrapper {
@@ -444,5 +474,12 @@ input[type=radio], input[type=checkbox] {
 
 .theme-dark input[type=radio], .theme-dark input[type=checkbox] {
     background-image: none;
-
 }
+
+/* WORKSPACE POPUP */
+
+/* .theme-dark .WorkspacePopup {
+    background-color: transparent;
+    background-image: url(12.png);
+    background-position: right;
+} */
