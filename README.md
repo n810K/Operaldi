@@ -1,5 +1,5 @@
 # Operaldi
-My own CSS for Vivaldi, inspired by Opera
+My custom CSS for Vivaldi, inspired by Opera
 
 Screenshots:
 
