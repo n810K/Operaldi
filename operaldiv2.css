@@ -1,0 +1,196 @@
+:root {
+    --lessTransparent: transparent 50%;
+}
+
+/* MAINBAR - Address bar with rounded borders */
+
+#browser.win.address-top .toolbar-mainbar:has(.window-buttongroup.on-mainbar), #browser.linux.address-top .toolbar-mainbar:has(.window-buttongroup.on-mainbar) {
+    min-height: calc(44px / var(--uiZoomLevel));
+}
+
+.density-on .UrlBar-SearchField, .density-on .UrlBar-AddressField {
+    height: 34px;
+}
+
+.disable-titlebar#browser.win .window-buttongroup {
+    height: 44px;
+}
+
+#browser.win .window-buttongroup button.window-close {
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius); 
+}
+
+.mainbar {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    margin: 5px;
+    border-radius: var(--radius);
+}
+
+.SearchField, .UrlBar-AddressField {
+    border: none !important;
+    background-color: transparent;
+}
+
+.SearchField:hover, .UrlBar-AddressField:hover {
+    background-color: var(--colorBg);
+}
+
+.color-behind-tabs-on .SearchField:focus-within, .color-behind-tabs-on .MailSearchField-Inner:focus-within, .color-behind-tabs-on .UrlBar-AddressField:focus-within {
+    outline: none;
+    background-color: var(--colorBg);
+}
+
+.address-top .mainbar {
+    border-bottom: none;
+}
+
+.mainbar button:hover {
+    background-color: var(--colorBg);
+    border-radius: var(--radius);
+}
+
+/* Special handling for buttons at corners to respect mainbar radius */
+.mainbar .button-toolbar:first-child button:hover {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+.mainbar .vivaldi:hover {
+    border-radius: var(--radius);
+}
+
+/* Ensure all toolbar buttons have proper radius */
+.toolbar-mainbar .button-toolbar button:hover,
+.toolbar-mainbar button:hover {
+    border-radius: var(--radius);
+}
+
+/* LEFT SIDEBAR PANEL - Pill-shaped rounded borders */
+
+#switch {
+    padding-top: 5px;
+}
+
+div#main.left #panels-container {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    margin: 5px;
+    border-radius: var(--radius);
+}
+
+/* Apply the fix to both collapsed and expanded states */
+#panels-container.left.icons #switch {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    border-radius: var(--radius);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    padding-right: 10px;
+}
+
+#panels-container.left:not(.icons) #switch {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    border-radius: var(--radius);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    padding-right: 10px;
+}
+
+#panels-container.left:not(.icons) .panel-group, #panels-container.left.icons:not(:has(.SlideBar)) {
+    border-right: none;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* Right panel styling (original approach - no extra padding) */
+div#main.right #panels-container {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    margin: 5px;
+    border-radius: var(--radius);
+}
+
+#panels-container.right:not(.icons) .panel-group, #panels-container.right.icons:not(:has(.SlideBar)) {
+    border-left: none;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+div#main.left #panels .webpanel-stack .webpanel .webpanel-content {
+    margin-left: 3px; /* Reduce spacing to give more room for tabs */
+    border-radius: var(--radius);
+}
+
+#panels-container button:hover {
+    background-color: var(--colorBg);
+    border-radius: var(--radius);
+}
+
+.density-on #switch .addwebpanel-wrapper > button.active button, .density-on #switch > .button-toolbar.active button, .density-on #switch > * > .button-toolbar.active button, .density-on #switch > button.active button {
+    background-color: var(--colorBg);
+}
+
+/* Panel button styling to match mainbar theming */
+#panels-container button {
+    border: none;
+    background-color: transparent;
+}
+
+#panels-container .button-toolbar button {
+    color: var(--colorFg);
+}
+
+#panels-container .button-toolbar button:hover {
+    background-color: var(--colorBg);
+    border-radius: var(--radius);
+}
+
+#panels-container .button-pressed, 
+#panels-container .button-on {
+    background-color: var(--colorBg);
+    color: var(--colorFg);
+}
+
+/* FLOATING MAIN BROWSER WINDOW */
+
+#browser:not(.fullscreen) #webpage-stack {
+    border-radius: var(--radius);
+    margin: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
+}
+
+/* TAB BAR - Minimal styling to complement the floating design */
+
+#browser .tabbar-wrapper, #browser.tabs-top #header {
+    background-color: transparent;
+}
+
+#browser:not(.transparent-tabbar) #tabs-tabbar-container {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    margin-left: 5px;
+    border-radius: var(--radius);
+}
+
+/* Ensure proper spacing when no panels visible */
+body:not(:has(div#main.left #panels-container)) #tabs-tabbar-container {
+    margin-left: 0px !important;
+}
+
+#browser.color-behind-tabs-on .tab.active.active {
+    background-color: var(--colorBg);
+}
+
+#tabs-container .tab:not(.tab-group,.tab.active):hover {
+    background-color: var(--colorBg);
+}
+
+.color-behind-tabs-on .tab {
+    color: var(--colorFg);
+}
+
+/* Hide scrollbars for cleaner look */
+@media not (prefers-contrast: more) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+}
