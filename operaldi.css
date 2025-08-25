@@ -133,31 +133,59 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 div#main.right #panels-container {
-    padding-bottom: 5px; /* MORE SPACE UNDER SETTINGS ICON */
-    min-width: 44px; /* FIXING SIDEBAR PART 1 */
+    padding-bottom: 5px;
 }
 
-.density-on #switch { /* FIXING SIDEBAR PART 2 + ADJUSTING */
+div#main.left #panels-container {
+    padding-bottom: 5px;
+}
+
+.density-on div#main.right #switch {
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
     border-radius: var(--radius);
     padding-bottom: 5px;
-    padding-right: 4px;
-    min-width: 44px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
-#panels-container { /*FIXING SIDEBAR PART 3 */
+.density-on div#main.left #switch {
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    border-radius: var(--radius);
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 6px;
+}
+
+div#main.right #panels-container {
     background-color: transparent;
+}
+
+div#main.right #panels-container {
     margin-right: 5px;
 }
 
-#panels .webpanel-stack .webpanel .webpanel-content { /* WEBPANEL SETTINGS */
+div#main.left #panels-container {
+    margin-left: 5px;
+}
+
+div#main.right #panels .webpanel-stack .webpanel .webpanel-content {
     margin-right: 7px;
     border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
 }
 
+div#main.left #panels .webpanel-stack .webpanel .webpanel-content {
+    margin-left: 7px;
+    border-bottom-left-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+}
+
 #panels-container.right:not(.icons) .panel-group, #panels-container.right.icons:not(:has(.SlideBar)) {
-    border-left: none; /* HIDE WEIRD BORDER IN SIDEBAR */
+    border-left: none;
+}
+
+#panels-container.left:not(.icons) .panel-group, #panels-container.left.icons:not(:has(.SlideBar)) {
+    border-right: none;
 }
 
 #panels-container.overlay .panel-group {
@@ -227,6 +255,26 @@ div#main.right #panels-container {
     margin-left: 5px;
     border-radius: var(--radius);
 }
+
+/* Force full expansion when no panels visible */
+body:not(:has(#panels-container)) #tabs-tabbar-container {
+    margin-left: 0px !important;
+}
+
+body:not(:has(div#main.left #panels-container)) #tabs-tabbar-container {
+    margin-left: 0px !important;
+}
+
+body:not(:has(div#main.right #panels-container)) #tabs-tabbar-container {
+    margin-right: 0px !important;
+}
+
+
+div#main.left #panels-container {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    border-radius: var(--radius);
+}
+
 
 .tabs-left .tabbar-wrapper { /* BG COLOR OF TAB BAR PART 3 */
     margin-bottom: 5px;
@@ -434,6 +482,10 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
 
 #panels-container.right .panel {
     padding-left: 0px;
+}
+
+#panels-container.left .panel {
+    padding-right: 0px;
 }
 
 .MonthDayPicker {
